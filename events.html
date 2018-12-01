@@ -18,8 +18,35 @@
     <div id="s2practice">
       <h1>{{ title }}</h1>
       <hr />
-      <button v-on:click="increase">Increase</button>
+      <button v-on:click="increase(2, $event)">Increase</button>
       <h3>{{ counter }}</h3>
+      <p v-on:mousemove="updateCoordinates">
+        Coordinates: {{ x }}, {{ y }} -
+        <span v-on:mousemove="dummy">Option 1 for a DEAD SPOT</span>
+        <span v-on:mousemove.stop="">Option 2 for another dead spot</span>
+      </p>
+
+      <input type="text" v-on:keyup.enter.space="alertMe" />
+      <hr />
+      <h1>Challenges for Event Handler Secdtion</h1>
+      <h3>1</h3>
+      <h4>Show an alert when a button gets clicked.</h4>
+      <button v-on:click="alertMe">Alert?</button>
+      <hr />
+      <h3>2</h3>
+      <h4>
+        Listen to the keydown event and store the data in a key property. (Hint:
+        even.target.value)
+      </h4>
+      <input type="text" v-on:keydown="updateKeyValue" />
+      <p>{{ keyValue }}</p>
+      <hr />
+      <h3>3</h3>
+      <h4>
+        Similar to challenge 2, but only refresh the value if enter is pressed.
+      </h4>
+      <input type="text" v-on:keydown.enter="updateKeyValue" />
+      <p>{{ keyValue }}</p>
     </div>
 
     <script src="vuePractice.js"></script>
