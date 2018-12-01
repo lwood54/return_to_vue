@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vue Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="vuePractice.css"
+    />
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="challenge1">
+      <h1>{{ title }}</h1>
+      <hr />
+      <h3>Challenge 1</h3>
+      <p>Fill the p element below with your Name and Age</p>
+      <p>My name is {{ myName }} and I'm {{ myAge }}.</p>
+
+      <h3>Challenge 2</h3>
+      <p>Output your age, multiplied by 3</p>
+      <p>My age times 3 is: {{ myAge * 3 }}</p>
+
+      <h3>Challenge 3</h3>
+      <p>Call a function to output a random float between 0 and 1</p>
+      <p>Random Number between 0 and 1: {{ randNum() }}</p>
+
+      <h3>Challenge 4</h3>
+      <p>
+        Search any image on Google and output it here by binding the src
+        attribute
+      </p>
+      <img v-bind:src="imageSrc" />
+      <h3>Challenge 5</h3>
+      <p>Pre-Populate this input with your name (set the value attribute)</p>
+      <input type="text" v-bind:value="myName" />
+    </div>
+    <hr />
+    <hr />
+    <hr />
+    <!--
+      <div id="">
+
+      </div>
+    -->
+    <script src="vuePractice.js"></script>
+  </body>
+</html>
