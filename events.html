@@ -19,6 +19,7 @@
       <h1>{{ title }}</h1>
       <hr />
       <button v-on:click="increase(2, $event)">Increase</button>
+      <button v-on:click="counter++">Increase</button>
       <h3>{{ counter }}</h3>
       <p v-on:mousemove="updateCoordinates">
         Coordinates: {{ x }}, {{ y }} -
