@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vue Computed Properties Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="vuePractice.css"
+    />
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="ch3">
+      <h1>{{ title }}</h1>
+      <h2>
+        Challenge 1: Show 'result' of "not there yet" as long as "value" is not
+        equal to 37
+      </h2>
+      <h3>You can change "value" with buttons.</h3>
+      <h2>Print 'DONE' once you did it.</h2>
+      <p>Current Value: {{ value }}</p>
+      <button @click="value += 5">Add 5</button>
+      <button @click="value++">Add 1</button>
+      <button @click="value -= 5">Deduct 5</button>
+      <button @click="value--">Deduct 1</button>
+      <p>{{ result }}</p>
+      <hr />
+      <h2>
+        Challenge 2: Watch for changes in the "result" and reset the "value"
+        after 5 seconds
+      </h2>
+      <h3>BONUS: hookup the input to let the user set the duraction</h3>
+      <input
+        @keyup.enter="updateUserTime"
+        type="text"
+        placeholder="how many seconds to reset?"
+      />
+      <p>Users Selected Time to reset: {{ userTime / 1000 }} seconds</p>
+      <p>{{ value }}</p>
+    </div>
+
+    <script src="ch3_reactiveProps.js"></script>
+  </body>
+</html>
