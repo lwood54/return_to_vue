@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Styling Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="stylingPractice.css"
+    />
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="stylingPracticeApp">
+      <h1>{{ pageHeading }}</h1>
+      <hr />
+      <div>
+        <h3>
+          Challenge 1: Start the effect with the button. The effect should
+          alternate the "highlight" or "shrink" on each new setInterval tick
+        </h3>
+        <button @click="startEffect" @click="startEffect">Start Effect</button>
+        <div id="effect" :class="currentStyle"></div>
+      </div>
+      <hr />
+      <hr />
+      <div>
+        <h3>
+          Challenge 2: Create a couple of CSS classes and attach them via the
+          array synxtax.
+        </h3>
+        <div :class="[{famColor: true}, {famSize: true}]">I got no class:</div>
+      </div>
+      <hr />
+      <hr />
+      <div>
+        <h3>
+          Challenge 3: Let the user enter a class (create some example classes)
+          and attach it.
+        </h3>
+        <h5>Type in one of the class options below:</h5>
+        <ul>
+          <li>orange</li>
+          <li>round</li>
+          <li>shadow</li>
+        </ul>
+        <input type="text" v-model="userClass" /> <br />
+        <br />
+        <div :style="standardBox" :class="userClass"></div>
+      </div>
+      <hr />
+      <hr />
+      <div>
+        <h3>
+          Challenge 4: Let the user enter a class and true/false for another
+          class
+        </h3>
+        <h5>Type in one of the following classes:</h5>
+        <ul>
+          <li>red</li>
+          <li>green</li>
+        </ul>
+        <input type="text" v-model="userColor" />
+        <h5>Type in either true or false</h5>
+        <input type="text" v-model="userTruth" />
+        <div :style="standardBox" :class="[userColor, {shadow: isTrue}]"></div>
+      </div>
+    </div>
+    <script src="stylingPractice.js"></script>
+  </body>
+</html>

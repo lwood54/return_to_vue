@@ -17,6 +17,35 @@
   <body>
     <div id="dynamicCSS">
       <h1>{{ pageTitle }}</h1>
+      <div
+        class="demo"
+        @click="attachRed = !attachRed"
+        :class="divClasses"
+      ></div>
+      <div
+        class="demo"
+        @click="attachGreen = !attachGreen"
+        :class="{green: attachGreen}"
+      ></div>
+      <div
+        class="demo"
+        @click="attachBlue = !attachBlue"
+        :class="{blue: attachBlue}"
+      ></div>
+      <div class="demo" :class="color"></div>
+      <div class="demo" :class="[color, {red: attachRed}]"></div>
+      <hr />
+      <input type="text" v-model="color" />
+      <hr />
+      <hr />
+      <hr />
+      <h1>{{ secondTitle }}</h1>
+      <div class="demo" :style="{backgroundColor: noClassColor}"></div>
+      <div class="demo" :style="myStyles"></div>
+      <div class="demo" :style="[myStyles, {height: width + 'px'}]"></div>
+      <hr />
+      <input type="text" v-model="noClassColor" />
+      <input type="text" v-model="width" />
     </div>
     <script src="dynamicCSS.js"></script>
   </body>
