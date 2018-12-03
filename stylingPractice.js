@@ -9,7 +9,9 @@ var app = new Vue({
     userClass: 'orange',
     userColor: 'red',
     userTruth: '',
-    isTrue: false
+    isTrue: false,
+    colorPicker: 'pink',
+    progressWidth: 0
   },
   methods: {
     startEffect: function() {
@@ -23,6 +25,14 @@ var app = new Vue({
           vm.highlight = false;
         }
       }, 3000);
+    },
+    startProgressBar: function() {
+      var vm = this;
+      setInterval(function() {
+        vm.progressWidth < 100
+          ? (vm.progressWidth += 4)
+          : (vm.progressWidth = 0);
+      }, 200);
     }
   },
   computed: {

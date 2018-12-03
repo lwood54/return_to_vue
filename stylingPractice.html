@@ -69,6 +69,39 @@
         <input type="text" v-model="userTruth" />
         <div :style="standardBox" :class="[userColor, {shadow: isTrue}]"></div>
       </div>
+      <hr />
+      <hr />
+      <h3>
+        Challenge 5: Similar to number 3, but now values for styles instead of
+        classes.
+      </h3>
+      <h5>Type in a standard color of your choice:</h5>
+      <ul>
+        <li>orange</li>
+        <li>blue</li>
+        <li>green</li>
+      </ul>
+      <input type="text" v-model="colorPicker" />
+      <div :style="[{backgroundColor: colorPicker}, standardBox]"></div>
+      <hr />
+      <hr />
+      <h3>
+        Challenge 6: Make a simple progress bar using setInterval and style
+        bindings
+      </h3>
+      <h4>Start it by hitting the button.</h4>
+      <button @click="startProgressBar">Start Progress Bar</button> <br />
+      <br />
+      <div id="progressBar">
+        <div
+          id="filler"
+          :style="[
+          {backgroundColor: 'blue'},
+          {width: progressWidth + '%'},
+          {borderRadius: '25px'}
+          ]"
+        ></div>
+      </div>
     </div>
     <script src="stylingPractice.js"></script>
   </body>
